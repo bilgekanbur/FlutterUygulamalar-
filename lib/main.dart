@@ -9,6 +9,20 @@ class MyApp extends StatelessWidget {
   final url =
       "https://img.freepik.com/premium-vector/free-vector-beautiful-flying-hummingbird-design-element-banners-posters-leaflets-brochur_1009653-1.jpg?semt=ais_hybrid&w=740";
 
+  Widget _buildItem(String value, String label) {
+    return Expanded(
+      child: Column(
+        children: [
+          Text(
+            value,
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          Text(label, style: TextStyle(fontSize: 14)),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -51,55 +65,16 @@ class MyApp extends StatelessWidget {
                     padding: const EdgeInsets.all(15.0),
                     child: Row(
                       children: [
-                        Expanded(
-                          child: Column(
-                            children: [
-                              Text(
-                                "521",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              Text("Takipçi", style: TextStyle(fontSize: 14)),
-                            ],
-                          ),
-                        ),
-                        Expanded(
-                          child: Column(
-                            children: [
-                              Text(
-                                "618",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              Text(
-                                "Takip Edilen",
-                                style: TextStyle(fontSize: 14),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Expanded(
-                          child: Column(
-                            children: [
-                              Text(
-                                "5",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              Text("Gönderi", style: TextStyle(fontSize: 14)),
-                            ],
-                          ),
-                        ),
+                        _buildItem("521", "Takipçi"),
+                        _buildItem("618", "Takip Edilen"),
+                        _buildItem("5", "Atılan Gönderi"),
                       ],
                     ),
                   ),
                 ),
+                SizedBox(height: 15
+                ),
+
                 Card(
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
@@ -116,12 +91,61 @@ class MyApp extends StatelessWidget {
                         SizedBox(height: 6),
                         Text(
                           "Flutter ile Mobil Geliştirmeyi Öğrenmekteyim.Ayrıca Kotlin ile de mobil uygulama projeleri geliştirmekteyim.",
-                          style: TextStyle(fontSize: 14),
+                          style: TextStyle(fontSize: 16),
                         ),
                       ],
                     ),
                   ),
                 ),
+                SizedBox(
+                  height: 8
+                ),
+                Card(
+                  child:Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Eğitim Bilgileri",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold
+                        ),
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("Lisans",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold
+                            ),
+                            ),
+                            Text("Atatürk Üniversitesi-Bilgisayar Mühendisliği",
+                            style: TextStyle(
+                              fontSize: 16,
+                             
+                            ),
+                            ),
+                            Text("Yüksek Lisans",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold
+                            ),
+                            ),
+                            Text("Atatürk Üniversitesi-Bilgisayar Mühendisliği Tezli YL",
+                            style: TextStyle(
+                              fontSize: 16,
+                             
+                            ),
+                            ),
+                          ],
+                        ),
+
+                      ],
+                    ),
+                  ),
+                )
               ],
             ),
           ),
